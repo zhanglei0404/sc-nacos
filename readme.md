@@ -4,16 +4,14 @@
 |:-------------:|:------------:|:--------------------:|:-----:|
 | 2.2.5.RELEASE | Hoxton.SR1   | 2.2.0.RELEASE        | 1.1.4 |
 -- -
+更多版本对应关系参考：[版本说明 Wiki](https://github.com/alibaba/spring-cloud-alibaba/wiki/%E7%89%88%E6%9C%AC%E8%AF%B4%E6%98%8E)
 ## 二、nacos 服务器安装
 #### Step 1: 下载
-* [码云](https://gitee.com/mirrors/Nacos/releases)
+* [码云（速度快）](https://gitee.com/mirrors/Nacos/releases)
 * [github发行版](https://github.com/alibaba/nacos/releases)
----
-**码云下载代码构建比较快**
-```
-mvn -Prelease-nacos -DskipTests clean install -U
-```
-#### Step 2: 启动
+#### 打包 ```mvn -Prelease-nacos -DskipTests clean install -U```
+
+#### Step 2: 启动 (nacos/bin/)
 
 On **Linux/Unix/Mac** start server with standalone: 
 ```

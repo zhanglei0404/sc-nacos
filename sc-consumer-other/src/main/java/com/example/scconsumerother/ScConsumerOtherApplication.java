@@ -1,4 +1,4 @@
-package com.example.scconsumer;
+package com.example.scconsumerother;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -8,10 +8,10 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 @SpringBootApplication
 @EnableFeignClients
 @EnableHystrix // 开启监控
-public class ScConsumerApplication {
+public class ScConsumerOtherApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(ScConsumerApplication.class, args);
+        SpringApplication.run(ScConsumerOtherApplication.class, args);
     }
 
 }
