@@ -1,0 +1,19 @@
+#工程端口号
+server:
+  port: 11000
+
+spring:
+  application:
+    name: hystrix-dashboard #工程名，后面各个服务间调用接口要用到
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848 # nacos注册地址
+
+#聚合的工程
+turbine:
+  aggregator:
+    clusterConfig: default # 指定聚合哪些集群，默认为 default
+  cluster-name-expression: new String("default") # 指定了集群名称为 default，必须这么写
+  app-config: service-consumer,service-consumer-other # 要监控的 spring.application.name
+
