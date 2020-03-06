@@ -10,8 +10,16 @@ public class HahaController {
     @Autowired(required = false)
     HahaService helloService;
 
+    @Autowired(required = false)
+    HahahiService hellohiService;
+
     @GetMapping("/haha")
     public String sayHaha(@RequestParam("name") String name) {
         return helloService.sayHaha(name);
+    }
+
+    @GetMapping("/hahahi")
+    public String sayHahahi(@RequestParam("name") String name) {
+        return hellohiService.sayHahahi(name);
     }
 }
