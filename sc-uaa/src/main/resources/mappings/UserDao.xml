@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.scuaa.dao.UserDao">
+
+    <select id="loadUserByUsername" parameterType="string" resultType="com.example.scuaa.model.UserDto">
+        SELECT id,username,password,fullname,mobile
+        FROM `t_user`
+        WHERE username=#{username}
+        LIMIT 1
+    </select>
+
+    <select id="findPermissionByUserId" parameterType="string" resultType="com.example.scuaa.model.PermissionDto">
+        SELECT t1.* FROM t_permission t1
+        INNER JOIN t_role_permission t2 ON t1.id=t2.permission_id
+        INNER JOIN t_role t3 ON t3.id=t2.role_id
+        INNER JOIN t_user_role t4 ON t3.id=t4.role_id
+        WHERE t4.user_id=#{userId}
+    </select>
+</mapper>
