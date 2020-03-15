@@ -21,7 +21,7 @@ public class HelloController {
      * @return
      */
     @GetMapping("/sleuth/hi")
-    public String sayHahahi(@RequestParam("name") String name) {
+    public String sayHi(@RequestParam("name") String name) {
         return helloService.sayhi(name);
     }
 

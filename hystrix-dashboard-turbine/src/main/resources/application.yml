@@ -15,5 +15,5 @@ turbine:
   aggregator:
     clusterConfig: default # 指定聚合哪些集群，默认为 default
   cluster-name-expression: new String("default") # 指定了集群名称为 default，必须这么写
-  app-config: service-consumer,service-consumer-other # 要监控的 spring.application.name
+  app-config: service-provider,service-consumer,service-source # 要监控的 spring.application.name
 
