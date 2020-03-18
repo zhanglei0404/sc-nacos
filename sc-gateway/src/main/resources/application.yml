@@ -12,14 +12,27 @@ spring:
         locator:
           enabled: true
       routes:
-        - id: service-consumer
-          uri: lb://SERVICE-CONSUMER
+        - id: service-resource
+          uri: lb://service-resource
           order: 0
+          predicates:
+            - Path=/resource/**
+          filters:
+            - StripPrefix=1
+        - id: service-consumer
+          uri: lb://service-consumer
+          order: 1
           predicates:
             - Path=/consumer/**
           filters:
             - StripPrefix=1
-            - AddResponseHeader=X-Request-Foo, service-consumer
+        - id: service-provider
+          uri: lb://service-provider
+          order: 2
+          predicates:
+            - Path=/provider/**
+          filters:
+            - StripPrefix=1
 server:
   port: 10000
 logging:

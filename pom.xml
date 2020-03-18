@@ -130,6 +130,19 @@
             <optional>true</optional>
         </dependency>
 
+        <!-- swagger2聚合增强 -->
+        <dependency>
+            <groupId>com.github.xiaoymin</groupId>
+            <artifactId>knife4j-spring-boot-starter</artifactId>
+            <version>2.0.2</version>
+        </dependency>
+        <!--不加这个jar会knife4j冲突-->
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>20.0</version>
+        </dependency>
+
         <!--测试-->
         <dependency>
             <groupId>org.springframework.boot</groupId>

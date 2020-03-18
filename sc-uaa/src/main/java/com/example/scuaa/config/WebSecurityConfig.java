@@ -16,6 +16,13 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 @EnableGlobalMethodSecurity(securedEnabled = true,prePostEnabled = true)
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
+    /**
+     * 不需要认证的接口
+     */
+    final String[] anonUris = new String[]{
+            "/login*"
+    };
+
     //认证管理器
     @Bean
     public AuthenticationManager authenticationManagerBean() throws Exception {
@@ -32,7 +39,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http.csrf().disable()
                 .authorizeRequests()
-                .antMatchers("/login*").permitAll()
+                .antMatchers(anonUris).permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()
