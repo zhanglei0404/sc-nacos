@@ -13,9 +13,9 @@ import org.springframework.security.oauth2.provider.token.store.JwtTokenStore;
 public class TokenConfig {
 
     // 采用对称加密，授权服务器和资源服务器秘钥一致
-    @Value("${signing.key}")
-    private String SIGNING_KEY;
-//    private final String SIGNING_KEY = "uaa123";
+//    @Value("${signing.key}")
+//    private String SIGNING_KEY;
+    private final String SIGNING_KEY = "uaa123";
 
     @Bean
     public TokenStore tokenStore() {

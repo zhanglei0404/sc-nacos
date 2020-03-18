@@ -4,7 +4,7 @@ server:
 
 spring:
   application:
-    name: hystrix-dashboard #工程名，后面各个服务间调用接口要用到
+    name: sc-hystrix-dashboard #工程名，后面各个服务间调用接口要用到
   cloud:
     nacos:
       discovery:

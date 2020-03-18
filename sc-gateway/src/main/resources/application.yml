@@ -1,0 +1,27 @@
+spring:
+  application:
+    name: sc-gateway
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848 # nacos注册地址
+    gateway:
+      default-filters:
+        - Elapsed=true
+      discovery:
+        locator:
+          enabled: true
+      routes:
+        - id: service-consumer
+          uri: lb://SERVICE-CONSUMER
+          order: 0
+          predicates:
+            - Path=/consumer/**
+          filters:
+            - StripPrefix=1
+            - AddResponseHeader=X-Request-Foo, service-consumer
+server:
+  port: 10000
+logging:
+  level:
+    org.springframework.cloud.gateway: debug

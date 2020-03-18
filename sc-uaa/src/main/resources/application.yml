@@ -4,7 +4,7 @@ server:
     context-path: /uaa
 spring:
   application:
-    name: uaa-service
+    name: sc-uaa
   profiles:
     active: dev
   cloud:

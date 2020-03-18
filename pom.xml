@@ -16,14 +16,21 @@
     <packaging>pom</packaging>
     <description>springcloud使用nacos做注册中心</description>
 
+    <modules>
+        <module>hystrix-dashboard-turbine</module>
+        <module>sc-gateway</module>
+        <module>sc-uaa</module>
+        <module>sc-resource</module>
+        <module>sc-consumer</module>
+        <module>sc-provider</module>
+    </modules>
+
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <java.version>1.8</java.version>
+        <java.version>11</java.version>
         <spring-cloud.version>Hoxton.SR1</spring-cloud.version>
         <spring-cloud-alibaba.version>2.2.0.RELEASE</spring-cloud-alibaba.version>
-
-        <!-- Dependency Versions -->
     </properties>
 
     <dependencyManagement>
