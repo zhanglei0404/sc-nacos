@@ -24,3 +24,7 @@ management:
 feign:
   hystrix:
     enabled: true
+
+# 生产环境改为true， 屏蔽swagger
+knife4j:
+  production: false

@@ -25,5 +25,3 @@ spring:
 mybatis:
   mapper-locations: classpath:mappings/*.xml
 
-swagger:
-  production: true
