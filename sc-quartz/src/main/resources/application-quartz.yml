@@ -1,0 +1,25 @@
+﻿spring:
+  quartz:
+    job-store-type: jdbc #数据库方式
+    overwrite-existing-jobs: true  #每次启动后都会覆盖数据之前的job信息，默认false，这时配置的cron expression 不会同步到数据库
+    #相关属性配置
+    properties:
+      org:
+        quartz:
+          scheduler:
+            instanceName: MyScheduler
+            instanceId: AUTO
+          jobStore:
+            class: org.quartz.impl.jdbcjobstore.JobStoreTX
+            driverDelegateClass: org.quartz.impl.jdbcjobstore.StdJDBCDelegate
+            tablePrefix: qrtz_
+            isClustered: true
+            clusterCheckinInterval: 10000
+            useProperties: false
+          threadPool:
+            class: org.quartz.simpl.SimpleThreadPool
+            threadCount: 5
+            threadPriority: 5
+            threadsInheritContextClassLoaderOfInitializingThread: true
+
+

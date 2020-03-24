@@ -10,6 +10,7 @@
 | gateway | 10000   |
 | dashboard | 11000   |
 | uaa | 12000   |
+| quartz | 13000   |
 | nacos | 8848(default)   |
 | zipkin | 9411(default)   |
 | otherService | 87/97**   |
@@ -96,3 +97,6 @@ SERVICE-CONSUMER-OTHER 转发 SERVICE-CONSUMER 转发 SERVICE-PROVIDER
 ## 四、 gateway聚合集成swagger2
 [访问地址：http://localhost:10000/doc.html](http://localhost:10000/doc.html)
 [knife4j官方文档：基于Spring Cloud Gateway](https://doc.xiaominfo.com/guide/ui-front-gateway.html)
+
+## 五、 springboot集成quartz，附带定时任务调度界面
+[访问地址：http://localhost:13000/JobManager.html](http://localhost:13000/JobManager.html)
